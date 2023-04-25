@@ -30,3 +30,5 @@ print("房價的預測準確率: ", score)
 plt.plot(Y_test, label = "Real Price")
 plt.plot(Y_predict, label = "Predict Price")
 plt.legend()
+
+![](https://github.com/Zong77/Artificial-Intelligence/blob/main/regression.png)
