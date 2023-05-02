@@ -23,9 +23,9 @@ np.random.seed(29)
 
 #資料集中，2/3當作訓練集，1/3當作測試集
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.33)
-knn_clf = KNeighborsClassifier(n_neighbors = 5)
-knn_clf = knn_clf.fit(X_train, Y_train)
-Y_predict  = knn_clf.predict(X_test)
+knn_clf = KNeighborsClassifier(n_neighbors = 5) #定義KNN
+knn_clf = knn_clf.fit(X_train, Y_train) #使用"fit()"來將"knn_clf"訓練，其中輸入的訓練集特徵矩陣和目標變數分別為"X_train"和"Y_train"
+Y_predict  = knn_clf.predict(X_test) #"使用predict()"來對測試集進行預測，其中輸入的測試集特徵矩陣為"X_test"，預測結果儲存在"Y_predict"變數中
 score = accuracy_score(Y_test, Y_predict)
 print("鳶尾花分類的預測準確率: ", score)
 
