@@ -5,22 +5,23 @@ Created on Wed Apr 26 01:04:07 2023
 @author: Qi
 """
 
-#隨機生成參數
 import numpy as np
 from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-#如果np.random.seed()內沒有數字，參數隨機生成
-np.random.seed()
+#使用Python中的NumPy庫來設置隨機生成器的種子碼(seed)為47
+np.random.seed(47)
 
+#讀取iris分類資料集
 iris = datasets.load_iris()
 print("資料集的特徵欄位名稱為: ", iris.feature_names)
 print("資料集的目標值為: ", iris.target_names)
 X = iris.data
 Y = iris.target
 
+#資料集中，2/3當作訓練集，1/3當作測試集
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.33)
 decision_tree_clf = DecisionTreeClassifier(criterion = "entropy")
 decision_tree_clf = decision_tree_clf.fit(X_train, Y_train)
